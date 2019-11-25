@@ -60,7 +60,12 @@ export default class Main extends Component {
                        <Icons size={20} name="lock" color={"white"} backgroundColor="#3b5998" style={{paddingLeft : 20}}  />
                         <TextInput placeholderTextColor="white" keyboardType="visible-password"  placeholder="Password"  secureTextEntry style={styles.input}></TextInput>
                     </View>
-
+                    {isLogin === false && 
+                    <View style={styles.viewInput}>
+                       <Icons size={20} name="lock" color={"white"} backgroundColor="#3b5998" style={{paddingLeft : 20}}  />
+                        <TextInput placeholderTextColor="white" keyboardType="visible-password"  placeholder="Retype Password"  secureTextEntry style={styles.input}></TextInput>
+                    </View>
+                    }
                 </View>
                 {isLogin === true && 
                 <View style={{height: 30, width: '90%'}}>
@@ -71,6 +76,7 @@ export default class Main extends Component {
                     </TouchableOpacity>
                 </View>
                 }
+
                 <TouchableOpacity>
                     <Text>
                         {isLogin == true ? "SIGN IN" : "SIGN UP"}
@@ -135,7 +141,7 @@ const styles = StyleSheet.create({
     viewEmail  : {
         width : '100%',
         flexDirection : 'column',
-        height : 100,
+        height : 140,
         padding : 20,
         margin: 20,
         justifyContent : 'center',
